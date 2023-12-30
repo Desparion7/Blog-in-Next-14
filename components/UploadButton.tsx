@@ -84,10 +84,7 @@ const UploadDropzone = () => {
 					className='border h-64 m-4 border-dashed border-gray-300 rounded-lg'
 				>
 					<div className='flex items-center justify-center h-full w-full'>
-						<label
-							htmlFor='dropzone-file'
-							className='flex flex-col items-center justify-center w-full h-full rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100'
-						>
+						<div className='flex flex-col items-center justify-center w-full h-full rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100'>
 							<div className='flex flex-col items-center justify-center pt-5 pb-6'>
 								<Cloud className='h-6 w-6 text-zinc-500 mb-2' />
 								<p className='mb-2 text-sm text-zinc-700'>
@@ -115,11 +112,11 @@ const UploadDropzone = () => {
 							{isUploading ? (
 								<div className='w-full mt-4 max-w-xs mx-auto'>
 									<Progress
-										// indicatorColor={
-										// 	uploadProgress === 100
-										// 		? 'bg-green-500'
-										// 		: ' '
-										// }
+										indicatorColor={
+											uploadProgress === 100
+												? 'bg-green-500'
+												: ' '
+										}
 										value={uploadProgress}
 										className='h-1 w-full bg-zinc-200'
 									/>
@@ -135,10 +132,9 @@ const UploadDropzone = () => {
 							<input
 								{...getInputProps()}
 								type='file'
-								id='dropzone-file'
 								className='hidden'
 							/>
-						</label>
+						</div>
 					</div>
 				</div>
 			)}
