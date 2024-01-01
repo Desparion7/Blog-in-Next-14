@@ -12,7 +12,7 @@ import 'simplebar-react/dist/simplebar.min.css'
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-	title: 'Quill',
+	title: 'ChatWithPdf',
 	description: 'Aplication that allow to chat with pdf file',
 };
 

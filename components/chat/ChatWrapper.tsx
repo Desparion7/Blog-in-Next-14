@@ -1,8 +1,12 @@
-'use client'
+'use client';
 import { trpc } from '@/app/_trpc/client';
 import { ChevronLeft, Loader2, XCircle } from 'lucide-react';
 import Link from 'next/link';
 import { buttonVariants } from '../ui/button';
+import Message from './Message';
+import ChatInput from './ChatInput';
+import { ChatContextProvider } from './ChatStore';
+import Messages from './Messages';
 
 type ChatWrapperProps = {
 	fileId: string;
@@ -34,8 +38,7 @@ const ChatWrapper = ({ fileId }: ChatWrapperProps) => {
 						</p>
 					</div>
 				</div>
-
-				{/* <ChatInput isDisabled /> */}
+				<ChatInput isDisabled />
 			</div>
 		);
 	if (data?.status === 'PROCESSING')
@@ -52,8 +55,7 @@ const ChatWrapper = ({ fileId }: ChatWrapperProps) => {
 						</p>
 					</div>
 				</div>
-
-				{/* <ChatInput isDisabled /> */}
+				<ChatInput isDisabled />
 			</div>
 		);
 	if (data?.status === 'FAILED')
@@ -90,21 +92,19 @@ const ChatWrapper = ({ fileId }: ChatWrapperProps) => {
 						</Link>
 					</div>
 				</div>
-
-				{/* <ChatInput isDisabled /> */}
+				<ChatInput isDisabled />
 			</div>
 		);
-	// return (
-	// 	<ChatContextProvider fileId={fileId}>
-	// 		<div className='relative min-h-full bg-zinc-50 flex divide-y divide-zinc-200 flex-col justify-between gap-2'>
-	// 			<div className='flex-1 justify-between flex flex-col mb-28'>
-	// 				<Messages fileId={fileId} />
-	// 			</div>
-
-	// 			<ChatInput />
-	// 		</div>
-	// 	</ChatContextProvider>
-	// );
+	return (
+		<ChatContextProvider fileId={fileId}>
+			<div className='relative min-h-full bg-zinc-50 flex divide-y divide-zinc-200 flex-col justify-between gap-2'>
+				<div className='flex-1 justify-between flex flex-col mb-28'>
+					<Messages fileId={fileId} />
+				</div>
+				<ChatInput />
+			</div>
+		</ChatContextProvider>
+	);
 };
 
 export default ChatWrapper;
