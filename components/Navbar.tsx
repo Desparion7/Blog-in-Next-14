@@ -6,7 +6,6 @@ import { ArrowRight } from 'lucide-react';
 import {
 	LoginLink,
 	RegisterLink,
-	getKindeServerSession,
 } from '@kinde-oss/kinde-auth-nextjs/server';
 
 const Navbar = () => {
