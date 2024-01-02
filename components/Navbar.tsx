@@ -9,6 +9,7 @@ import {
 	getKindeServerSession,
 } from '@kinde-oss/kinde-auth-nextjs/server';
 import UserAccountNav from './UserAccountNav';
+import MobileNav from './MobileNav';
 
 const Navbar = async () => {
 	const { getUser } = getKindeServerSession();
@@ -18,10 +19,10 @@ const Navbar = async () => {
 			<MaxWidthWrapper>
 				<div className='flex h-14 items-center justify-between border-b border-zinc-200'>
 					<Link href='/' className='flex z-40 font-semibold'>
-						<span>quill.</span>
+						<span>ChatWithPDF</span>
 					</Link>
 
-					{/* <MobileNav isAuth={!!user} /> */}
+					<MobileNav isAuth={!!user} />
 
 					<div className='hidden items-center space-x-4 sm:flex'>
 						{!user ? (
@@ -63,7 +64,6 @@ const Navbar = async () => {
 								>
 									Dashboard
 								</Link>
-
 								<UserAccountNav
 									name={
 										!user.given_name || !user.family_name
