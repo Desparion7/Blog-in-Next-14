@@ -18,7 +18,6 @@ const Page = async () => {
 		redirect('/auth-callback?origin=dashboard');
 	}
 	const subscriptionPlan = await getUserSubscriptionPlan();
-
 	return <Dashboard subscriptionPlan={subscriptionPlan} />;
 };
 

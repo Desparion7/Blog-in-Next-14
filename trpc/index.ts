@@ -43,7 +43,7 @@ export const appRouter = router({
 		const billingUrl = absoluteUrl('/dashboard/billing');
 
 		if (!userId) throw new TRPCError({ code: 'UNAUTHORIZED' });
-
+	
 		const dbUser = await db.user.findFirst({
 			where: {
 				id: userId,
