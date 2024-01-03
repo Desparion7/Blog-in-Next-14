@@ -43,7 +43,7 @@ export const appRouter = router({
 		const billingUrl = absoluteUrl('/dashboard/billing');
 
 		if (!userId) throw new TRPCError({ code: 'UNAUTHORIZED' });
-	
+
 		const dbUser = await db.user.findFirst({
 			where: {
 				id: userId,
@@ -59,7 +59,6 @@ export const appRouter = router({
 				customer: dbUser.stripeCustomerId,
 				return_url: billingUrl,
 			});
-
 			return { url: stripeSession.url };
 		}
 
