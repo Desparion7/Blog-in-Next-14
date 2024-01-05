@@ -43,7 +43,7 @@ export function constructMetadata({
 			images: [image],
 		},
 		icons,
-		metadataBase: new URL('https://chat-with-pdf-six.vercel.app'),
+		metadataBase: new URL('https://chat-with-9uxk29tyq-desparion7.vercel.app'),
 		// themeColor: '#ffffffff',
 		...(noIndex && {
 			robots: {
