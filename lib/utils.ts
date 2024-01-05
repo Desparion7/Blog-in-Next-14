@@ -1,5 +1,5 @@
 import { type ClassValue, clsx } from 'clsx';
-import { Metadata } from 'next'
+import { Metadata } from 'next';
 import { twMerge } from 'tailwind-merge';
 
 export function cn(...inputs: ClassValue[]) {
@@ -43,7 +43,7 @@ export function constructMetadata({
 			images: [image],
 		},
 		icons,
-		metadataBase: new URL('https://chat-with-9uxk29tyq-desparion7.vercel.app'),
+		metadataBase: new URL('https://chat-with-pdf-six.vercel.app'),
 		// themeColor: '#ffffffff',
 		...(noIndex && {
 			robots: {
